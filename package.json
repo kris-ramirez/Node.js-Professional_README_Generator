@@ -1,0 +1,26 @@
+{
+  "name": "node.js-professional_readme_generator",
+  "version": "1.0.0",
+  "description": "challenge 9",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kris-ramirez/Node.js-Professional_README_Generator.git"
+  },
+  "keywords": [
+    "bootcamp",
+    "9"
+  ],
+  "author": "Kristian Ramirez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kris-ramirez/Node.js-Professional_README_Generator/issues"
+  },
+  "homepage": "https://github.com/kris-ramirez/Node.js-Professional_README_Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
