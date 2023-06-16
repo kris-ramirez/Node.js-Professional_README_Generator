@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/kris-ramirez/Node.js-Professional_README_Generator#readme",
   "dependencies": {
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.2.5",
+    "latest": "^0.2.0"
   }
 }

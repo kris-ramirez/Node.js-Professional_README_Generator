@@ -1,16 +1,15 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-
-// TODO: Include packages needed for this application
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const questions = [
+const questions =
     inquirer
         .prompt([
             {
                 type: 'input',
                 name: 'name',
-                message: 'Enter your project title',
+                message: 'Enter your project title.',
             },
             {
                 type: 'input',
@@ -21,7 +20,7 @@ const questions = [
                 type: 'checkbox',
                 name: 'table of contents',
                 message: "What do you want included in your table of contents?",
-                choices: ['Installation, Usage, Credits, License'],
+                choices: ['installation', 'usage', 'credits', 'license'],
             },
             {
                 type: 'input',
@@ -42,7 +41,7 @@ const questions = [
                 type: 'list',
                 name: 'License',
                 message: 'Enter your license.',
-                choices: ['MIT', 'GNU GPLv3', 'GNU AGPLv3', 'GNU LGPLv3', 'Mozilla Public', 'Apache', 'Boost Software', 'Unlicense'],
+                choices: ['MIT', 'Mozilla Public', 'Apache', 'Boost Software', 'Unlicense'],
             },
             {
                 type: 'input',
@@ -67,12 +66,14 @@ const questions = [
                 message: 'What is your email?',
             },
         ])
-];
+    .then((data) => {
+        const fileName = 'README1.md';
+        writeToFile(fileName, data);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
 
-//collect user input
-function promptUser() {
-    return inquirer.prompt(questions);
-}
 
 // function to write README file
 function writeToFile(fileName, data) {
@@ -86,51 +87,22 @@ function writeToFile(fileName, data) {
         console.log(`README file "${fileName}" has been created successfully.`);
     });
 }
+//generate table of contents
+function generateTableOfContents(data) {
+    const tableOfContents = data['table of contents'].map((item) => {
+        const section = item.toLowerCase();
+        const link = `[${section}](#${section})`;
+        return `* ${link}`;
 
+    });
+    return tableOfContents.join('\n');
+}
 
-// TODO: Create a function to initialize app generate content
+// generate README content
 function generateReadme(data) {
-    const readMeContent = `
-    # ${data.name}
-
-    ## Description
-    ${data.description}
-
-    ## Table of Contents
-    ${data['table of contents'].join('\n')}
-
-    ## Installation
-    ${data.installation}
-
-    ## Usage
-    ${data.usage}
-
-    ## Credits
-    ${data.Credits}
-    
-    ## License
-    ${data.License}
-
-    ## Contributing
-    ${data.Contributing}
-
-    ## Tests
-    ${data.Tests}
-
-    ## Questions
-    GitHub: [${data['GitHub username']}](https://github.com/${data['GitHub username']})
-    Email: ${data.email}
-`;
-
-    return readMeContent
+    const tableOfContents = generateTableOfContents(data);
+    const readMeContent = generateMarkdown(data, tableOfContents);
+    return readMeContent;
 }
 
 
-promptUser()
-    .then((data) => {
-        const fileName = 'README.md';
-        writeToFile(fileName, data);
-    })
-    .catch((error) => {
-        console.error(error);
-    });
