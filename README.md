@@ -11,7 +11,7 @@ N/A
 ## Usage
 
 This application uses the command line. You can view how to use it by watching the video below. 
-
+https://watch.screencastify.com/v/NPL6afVCKvNCXSrU6N4S
 
 ## Credits
 
