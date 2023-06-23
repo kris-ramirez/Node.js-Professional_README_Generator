@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
+// an array of questions for user input
 const questions =
     inquirer
         .prompt([
@@ -56,11 +56,9 @@ const questions =
             {
                 type: 'input',
                 name: 'GitHub username',
-                //turn this into a link to their profile - goes in questions
                 message: 'What is your GitHub username?',
             },
             {
-                //goes in questions
                 type: 'input',
                 name: 'email',
                 message: 'What is your email?',

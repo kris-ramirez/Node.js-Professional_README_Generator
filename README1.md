@@ -1,7 +1,7 @@
-# Challenge
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# Challenge # 9 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Description
-Hello
+Node Challenge to create a command-line application
   
 ## Table of Contents
 * [installation](#installation)
@@ -10,25 +10,25 @@ Hello
 * [license](#license)
   
 ## Installation
-Instructions
+N/A
   
 ## Usage
-Examples
+I will provide a video on how to use this application here.
   
 ## Credits
-None
+Paste links and tutoring hours here.
       
 ## License 
-This project is licensed under the Apache license. [Learn more](https://www.apache.org/licenses/LICENSE-2.0.txt)
+This project is licensed under the MIT license. [Learn more](https://www.mit.edu/~amini/LICENSE.md)
 
 
   
 ## Contributing
-Hello
+I would include guidelines here. 
   
 ## Tests
-test
+Test. 
   
 ## Questions
 GitHub: [kris-ramirez](https://github.com/kris-ramirez)
-Email: people@gmail.com
+Email: kristianmramirez@gmail.com
